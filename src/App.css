@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body {
+  margin-left: 50px;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -24,15 +28,33 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  display: flex;
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user_list {
+  width: 30%;
+  overflow: scroll;
+}
+.info {
+  width: 70%;
+  background: #e2e2e2;
+  overflow: scroll;
+}
+
+.user_list, .info {
+  height: 100vh;
+  border: 1px solid #e2e2e2;
+}
+.user_card {
+  border-bottom: 1px solid #e2e2e2;
+  box-shadow: 0 0 18px -9px #282c34;
+  cursor: pointer;
+  transition: all .2s;
+  font-size: 10px;
+}
+
+.user_card:hover {
+  background: #e2e2e2;
 }
