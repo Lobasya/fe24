@@ -1,16 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import User from "../../components/User";
+import {useSelector} from '../../store/context';
 
-const UsersList = ({users, handlePickUser}) => {
+const UsersList = () => {
+    const users = useSelector(state => state.users)
+
     return (
         <div className="user_list">
             {
                 users && users.length ? 
-                    users.map(user => {
+                users.map(user => {
                         return (
                             <User 
                                 user={user}
-                                handlePickUser={handlePickUser} 
                                 key={'userCard_'+user.id}
                             />
                         )

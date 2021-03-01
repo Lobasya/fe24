@@ -9,7 +9,10 @@ class Fetch {
     }
 
     getUsers(){
-        return this.axios.get('https://jsonplaceholder.typicode.com/users');
+        return this.axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
+            console.log('getUsers')
+            return res;
+        });
     }
 
     getPostsByUserId(userId){

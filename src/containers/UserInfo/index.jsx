@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import api from "../../api";
+import {useSelector} from '../../store/context';
 
 const Albums = ({albums}) => {
     const [photos, setPhotos] = useState([]);
@@ -63,13 +64,9 @@ const Posts = ({posts}) => {
     })
 }
 
-const Info = ({
-    isLoader,
-    user,
-    albums,
-    posts
-}) => {
+const Info = () => {
     const [isPosts, setIsPosts] = useState(true);
+    const {user, isLoader, albums, posts} = useSelector(state => state.infoData)
 
     if (!user && !isLoader) {
         return <p>No user info</p>
